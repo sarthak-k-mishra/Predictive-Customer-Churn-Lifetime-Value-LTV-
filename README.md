@@ -44,4 +44,39 @@ E-commerce platforms often lose significant revenue to high single-order churn w
 
 #### Python Analysis Highlights
 
-* Built an end-to-end EDA and predictive pipeline across **93,358 customers** and **96,478
+* Built an end-to-end EDA and predictive pipeline across **93,358 customers** and **96,478 delivered orders**
+* Engineered a **Logistic Regression** repeat-purchase classifier achieving **0.592 AUC**
+* Executed **chi-square significance tests** ruling out review score (`p=0.32`) and delivery delay (`p=0.06`) as churn catalysts
+* Uncovered the repeat-buyer Average Order Value compression (**R$146 vs R$161**)
+
+#### SQL Highlights
+
+* Engineered a multi-table relational pipeline joining **orders, customers, items, and payments** across 93,358 delivered-order customers
+* Built **RFM decile segmentation** using `NTILE()` and `RANK()` window functions
+* Isolated revenue concentration showing the **top 20% cohort drives 53.5%** of platform revenue
+
+#### Power BI Dashboard
+
+* **Executive retention dashboard** powered by **4 custom DAX measures**
+* **Expected-LTV matrix** highlighting top-tier customer revenue concentration (53.5%)
+* **Cohort retention heatmap** incorporating an explicit **right-censoring flag** to prevent distorted tail metrics
+* **Geographic repeat-rate map** across **27 Brazilian states** paired with a dynamic **revenue-at-risk table**
+
+#### Excel Modeling
+
+* Built a **What-If Analysis revenue model** simulating retention lift scenarios
+* Quantified that increasing repeat-purchase conversion from **3.00% to 5.00%** (~1,867 customers) yields **+R$276K** in annual incremental revenue
+
+---
+
+### Dataset
+
+**[Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)**  
+Source: Kaggle (Uploaded by *Olist*)  
+Scope: Relational e-commerce dataset covering 96,478 delivered orders, 93,358 unique customers, order payments, items, and customer reviews across 27 states.
+
+---
+
+### Key Business Recommendation
+
+Shift retention budget away from broad post-delivery service recovery—since neither review scores nor delivery delays drive churn—and deploy targeted second-order incentives aimed at converting **~1,867 high-potential first-time buyers**. Lifting repeat conversion from **3.00% to 5.00%** captures **+R$276K in annual incremental revenue** while protecting the top 20% customer tier generating over half of platform sales.
